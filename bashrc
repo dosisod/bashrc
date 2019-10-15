@@ -17,6 +17,7 @@ alias p3="python3"
 alias vimrc="vim.gtk ~/.vimrc"
 alias bashrc="vim.gtk ~/.bashrc"
 alias v="vim.gtk -p"
+alias vv="vim.gtk -s .vim"
 
 #git related aliases
 alias gpom="git push origin master"
@@ -33,7 +34,9 @@ alias goof="git reset --soft HEAD~1"
 function gg() { cd ~/Git/$@; }
 
 #system related aliases
+alias :q="exit"
 alias cls="clear&&ls"
+alias gls="clear&&git status"
 alias c="clear"
 alias cdd="cd .."
 alias grepr="grep -r . -e"
