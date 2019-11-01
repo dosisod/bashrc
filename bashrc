@@ -39,7 +39,7 @@ alias cls="clear&&ls"
 alias gls="clear&&git status"
 alias c="clear"
 alias cdd="cd .."
-alias grepr="grep -r . -e"
+function grepr() { grep --color=always -r $@ . | grep --color=always -v ".git/" | grep --color=always -v "Binary file"; }
 alias phps="php -S 0.0.0.0:1234"
 alias pp3="pip3 install"
 alias lsl="ls -alh"
