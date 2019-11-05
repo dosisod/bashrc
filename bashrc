@@ -39,6 +39,7 @@ alias cls="clear&&ls"
 alias gls="clear&&git status"
 alias c="clear"
 alias cdd="cd .."
+function mk() { mkdir $@ && cd $@; }
 function grepr() { grep --color=always -r $@ . | grep --color=always -v ".git/" | grep --color=always -v "Binary file"; }
 alias phps="php -S 0.0.0.0:1234"
 alias pp3="pip3 install"
@@ -47,4 +48,4 @@ alias lst="tree -fi | grep -v 'pycache'"
 alias psx="ps aux | grep"
 alias vtd="python3 /home/noot/Git/vootodoo/main.py"
 
-function ggg() { g++ $@.cpp && ./$@; }
+function ggg() { g++ $@.cpp -o $@ && ./$@; }
