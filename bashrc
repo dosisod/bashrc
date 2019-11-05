@@ -46,3 +46,5 @@ alias lsl="ls -alh"
 alias lst="tree -fi | grep -v 'pycache'"
 alias psx="ps aux | grep"
 alias vtd="python3 /home/noot/Git/vootodoo/main.py"
+
+function ggg() { g++ $@.cpp && ./$@; }
