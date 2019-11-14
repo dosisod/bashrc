@@ -9,7 +9,7 @@ export MDV_THEME=960.847
 function mdd() { mdv "$1" | less -R; }
 
 #my ps1 prompt
-export PS1="\[\e[1;31m\]\u\[\e[1;31m\]@\[\e[1;31m\]\h\[\e[1;37m\]:\[\e[1;34m\]\w\[\e[1;34m\]/\[\e[1;34m\]$ \[\e[0m\]"
+export PS1="\[\e[1;31m\]\u \[\e[1;34m\]\W\[\e[38;5;244m\]$ \[\e[0m\]"
 
 alias p3="python3"
 
@@ -34,6 +34,7 @@ alias goof="git reset --soft HEAD~1"
 function gg() { cd ~/Git/$@; }
 
 #system related aliases
+alias src="source ~/.bashrc"
 alias :q="exit"
 alias cls="clear&&ls"
 alias gls="clear&&git status"
@@ -47,5 +48,6 @@ alias lsl="ls -alh"
 alias lst="tree -fi | grep -v 'pycache'"
 alias psx="ps aux | grep"
 alias vtd="python3 /home/noot/Git/vootodoo/main.py"
+alias vimonous="python3 /home/noot/Git/vimonous/main.py"
 
 function ggg() { g++ $@.cpp -o $@ && ./$@; }
