@@ -38,6 +38,7 @@ alias src="source ~/.bashrc"
 alias :q="exit"
 alias cls="clear&&ls"
 alias gls="clear&&git status"
+alias r="./run"
 alias c="clear"
 alias cdd="cd .."
 function mk() { mkdir $@ && cd $@; }
@@ -49,5 +50,6 @@ alias lst="tree -fi | grep -v 'pycache'"
 alias psx="ps aux | grep"
 alias vtd="python3 /home/noot/Git/vootodoo/main.py"
 alias vimonous="python3 /home/noot/Git/vimonous/main.py"
+alias tss="tsc --build tsconfig.json"
 
 function ggg() { g++ $@.cpp -o $@ && ./$@; }
