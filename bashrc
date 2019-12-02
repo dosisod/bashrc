@@ -1,3 +1,5 @@
+export NODE_PATH=/usr/bin/node
+
 #allows for control+s in vim
 stty -ixon
 
@@ -41,6 +43,7 @@ alias gls="clear&&git status"
 alias sl="ls"
 alias r="./run"
 alias c="clear"
+alias p="cat"
 alias cdd="cd .."
 function mk() { mkdir $@ && cd $@; }
 function grepr() { grep --color=always -r $@ . | grep --color=always -v ".git/" | grep --color=always -v "Binary file"; }
