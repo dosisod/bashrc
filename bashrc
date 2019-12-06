@@ -55,5 +55,8 @@ alias psx="ps aux | grep"
 alias vtd="python3 /home/noot/Git/vootodoo/main.py"
 alias vimonous="python3 /home/noot/Git/vimonous/main.py"
 alias tss="tsc --build tsconfig.json"
+alias tsw="tsc --build tsconfig.json -w"
+
+alias chrome="chromium-browser"
 
 function ggg() { g++ $@.cpp -o $@ && ./$@; }
