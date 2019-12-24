@@ -18,7 +18,7 @@ alias p3="python3"
 #makes accessing config files easier
 alias vimrc="vim.gtk ~/.vimrc"
 alias bashrc="vim.gtk ~/.bashrc"
-alias v="vim.gtk -p"
+alias v="vim.gtk"
 alias vv="vim.gtk -s .vim"
 
 #git related aliases
@@ -46,7 +46,9 @@ alias c="clear"
 alias p="cat"
 alias cdd="cd .."
 function mk() { mkdir $@ && cd $@; }
+function grepf() { grep -F --color=always -r $@ . | grep --color=always -v ".git/" | grep --color=always -v "Binary file"; }
 function grepr() { grep --color=always -r $@ . | grep --color=always -v ".git/" | grep --color=always -v "Binary file"; }
+function greprf() { grep -F --color=always -r $@ . | grep --color=always -v ".git/" | grep --color=always -v "Binary file"; }
 alias phps="php -S 0.0.0.0:1234"
 alias pp3="pip3 install"
 alias lsl="ls -alh"
