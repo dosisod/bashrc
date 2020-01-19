@@ -1,3 +1,4 @@
+export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=1;34:ln=32:bn=32:se=0"
 export NODE_PATH=/usr/bin/node
 
 #allows for control+s in vim
@@ -28,6 +29,7 @@ alias gp="git push"
 alias gcm="git commit -m"
 alias ga="git add"
 alias gd="git diff"
+alias gdd="git diff --cached"
 alias gs="git status"
 alias gl="git log --name-only"
 alias gc="git checkout"
@@ -46,13 +48,15 @@ alias c="clear"
 alias p="cat"
 alias cdd="cd .."
 function mk() { mkdir $@ && cd $@; }
-function grepf() { grep -F --color=always -r $@ . | grep --color=always -v ".git/" | grep --color=always -v "Binary file"; }
-function grepr() { grep --color=always -r $@ . | grep --color=always -v ".git/" | grep --color=always -v "Binary file"; }
-function greprf() { grep -F --color=always -r $@ . | grep --color=always -v ".git/" | grep --color=always -v "Binary file"; }
+
+function grepf() { grep -F $@ . --color=always --exclude-dir={\*node_modules\*,\*\.git\*,\*.mypy\*} | grep -v --color=always "Binary file"; }
+function grepr() { grep -r $@ . --color=always --exclude-dir={\*node_modules\*,\*\.git\*,\*.mypy\*} | grep -v --color=always "Binary file"; }
+function greprf() { grep -rF $@ . --color=always --exclude-dir={\*node_modules\*,\*\.git\*,\*.mypy\*} | grep -v --color=always "Binary file"; }
+
 alias phps="php -S 0.0.0.0:1234"
 alias pp3="pip3 install"
 alias lsl="ls -alh"
-alias lst="tree -fi | grep -v 'pycache'"
+alias lst="tree -fi | grep -v 'pycache' | grep -v 'node_modules'"
 alias psx="ps aux | grep"
 alias vtd="python3 /home/noot/Git/vootodoo/main.py"
 alias vimonous="python3 /home/noot/Git/vimonous/main.py"
