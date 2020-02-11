@@ -1,6 +1,8 @@
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=1;34:ln=32:bn=32:se=0"
 export NODE_PATH=/usr/bin/node
 
+set -o vi
+
 #allows for control+s in vim
 stty -ixon
 
@@ -20,7 +22,7 @@ alias p3="python3"
 alias vimrc="vim.gtk ~/.vimrc"
 alias bashrc="vim.gtk ~/.bashrc"
 alias v="vim.gtk"
-alias vv="vim.gtk -s .vim"
+alias vv="source .venv/bin/activate"
 
 #git related aliases
 alias gpom="git push origin master"
