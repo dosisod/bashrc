@@ -68,3 +68,12 @@ alias tsw="tsc --build tsconfig.json -w"
 alias chrome="chromium-browser"
 
 function ggg() { g++ $@.cpp -o $@ && ./$@; }
+
+#downloads most recent version of my bashrc/vimrc
+function getbashrc() {
+	curl https://raw.githubusercontent.com/dosisod/bashrc/master/bashrc > ~/.bashrc
+}
+
+function getvimrc() {
+	curl https://raw.githubusercontent.com/dosisod/vimrc/master/vimrc > ~/.vimrc
+}
