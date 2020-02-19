@@ -49,11 +49,17 @@ alias r="./run"
 alias c="clear"
 alias p="cat"
 alias cdd="cd .."
+alias plant="netstat -plant"
 function mk() { mkdir $@ && cd $@; }
+alias k9="kill -9"
+alias g="grep"
 
-function grepf() { grep -F $@ . --color=always --exclude-dir={\*node_modules\*,\*\.git\*,\*.mypy\*} | grep -v --color=always "Binary file"; }
-function grepr() { grep -r $@ . --color=always --exclude-dir={\*node_modules\*,\*\.git\*,\*.mypy\*} | grep -v --color=always "Binary file"; }
-function greprf() { grep -rF $@ . --color=always --exclude-dir={\*node_modules\*,\*\.git\*,\*.mypy\*} | grep -v --color=always "Binary file"; }
+function _grep_wrapper() {
+	grep $@ --color=always --exclude-dir={\*.venv\*,\*node_modules\*,\*\.git\*,\*.\*py\*} | grep -v --color=always "Binary file";
+}
+
+function grepr() { _grep_wrapper -r $@ .; }
+function greprf() { _grep_wrapper -rF $@ .; }
 
 alias phps="php -S 0.0.0.0:1234"
 alias pp3="pip3 install"
