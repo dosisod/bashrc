@@ -14,7 +14,7 @@ export MDV_THEME=960.847
 function mdd() { mdv "$1" | less -R; }
 
 #my ps1 prompt
-export PS1="\[\e[1;31m\]\u \[\e[1;34m\]\W\[\e[38;5;244m\]$ \[\e[0m\]"
+export PS1="\[\e[1;31m\]\u \[\e[1;34m\]\W \$(__current_branch=\$(git branch 2> /dev/null | grep -F \"*\" | cut -c 3-);if [ \"\$__current_branch\" == \"master\" ]; then echo \"\[\e[0;32m\](\$__current_branch) \"; elif [ ! -z \"\$__current_branch\" ]; then echo \"\[\e[0;33m\](\$__current_branch) \";fi)\[\e[38;5;244m\]$ \[\e[0m\]"
 
 alias p3="python3"
 
@@ -52,7 +52,7 @@ alias cdd="cd .."
 alias plant="netstat -plant"
 function mk() { mkdir $@ && cd $@; }
 alias k9="kill -9"
-alias g="grep"
+alias g="_grep_wrapper"
 
 function _grep_wrapper() {
 	grep $@ --color=always --exclude-dir={\*.venv\*,\*node_modules\*,\*\.git\*,\*.\*py\*} | grep -v --color=always "Binary file";
