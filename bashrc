@@ -23,6 +23,7 @@ alias vimrc="vim.gtk ~/.vimrc"
 alias bashrc="vim.gtk ~/.bashrc"
 alias v="vim.gtk"
 alias vv="source .venv/bin/activate"
+alias mvv="python3 -m venv .venv && source .venv/bin/activate"
 
 #git related aliases
 alias gpom="git push origin master"
