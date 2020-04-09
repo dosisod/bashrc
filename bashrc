@@ -1,7 +1,7 @@
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=1;34:ln=32:bn=32:se=0"
 export NODE_PATH=/usr/bin/node
 
-set -o vi
+#set -o vi
 
 #allows for control+s in vim
 stty -ixon
@@ -19,9 +19,9 @@ export PS1="\[\e[1;31m\]\u \[\e[1;34m\]\W \$(__current_branch=\$(git branch 2> /
 alias p3="python3"
 
 #makes accessing config files easier
-alias vimrc="vim.gtk ~/.vimrc"
-alias bashrc="vim.gtk ~/.bashrc"
-alias v="vim.gtk"
+alias vimrc="vim.gtk -i NONE ~/.vimrc"
+alias bashrc="vim.gtk -i NONE ~/.bashrc"
+alias v="vim.gtk -i NONE"
 alias vv="source .venv/bin/activate"
 alias mvv="python3 -m venv .venv && source .venv/bin/activate"
 
@@ -71,6 +71,7 @@ alias vtd="python3 /home/noot/Git/vootodoo/main.py"
 alias vimonous="python3 /home/noot/Git/vimonous/main.py"
 alias tss="tsc --build tsconfig.json"
 alias tsw="tsc --build tsconfig.json -w"
+alias ccmake="cmake --build ."
 
 alias chrome="chromium-browser"
 
