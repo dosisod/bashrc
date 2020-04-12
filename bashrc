@@ -1,6 +1,18 @@
 export GREP_COLORS="ms=01;31:mc=01;31:sl=:cx=:fn=1;34:ln=32:bn=32:se=0"
-export NODE_PATH=/usr/bin/node
 
+#enable flask, disable dotnet telemetry
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export FLASK_DEBUG=1
+
+export NODE_PATH=/usr/bin/node
+export CHROME_BIN="/usr/bin/chromium-browser"
+
+#disable certain files
+export PYTHONSTARTUP=$HOME/.config/pythonrc.py
+export LESSHISTFILE=/dev/null
+export NODE_REPL_HISTORY=/dev/null
+
+#allow for vi style movement
 #set -o vi
 
 #allows for control+s in vim
@@ -44,12 +56,12 @@ function gg() { cd ~/Git/$@; }
 alias src="source ~/.bashrc"
 alias :q="exit"
 alias cls="clear&&ls"
-alias gls="clear&&git status"
+alias cgs="clear&&git status"
 alias sl="ls"
 alias r="./run"
 alias c="clear"
 alias p="cat"
-alias cdd="cd .."
+alias ..="cd .."
 alias plant="netstat -plant"
 function mk() { mkdir $@ && cd $@; }
 alias k9="kill -9"
@@ -64,7 +76,7 @@ function greprf() { _grep_wrapper -rF $@ .; }
 
 alias phps="php -S 0.0.0.0:1234"
 alias pp3="pip3 install"
-alias lsl="ls -alh"
+alias lsl="ls -Alh"
 alias lst="tree -fi | grep -v 'pycache' | grep -v 'node_modules'"
 alias psx="ps aux | grep"
 alias vtd="python3 /home/noot/Git/vootodoo/main.py"
