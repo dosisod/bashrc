@@ -33,7 +33,10 @@ alias p3="python3"
 #makes accessing config files easier
 alias vimrc="vim.gtk -i NONE ~/.vimrc"
 alias bashrc="vim.gtk -i NONE ~/.bashrc"
+alias todo="vim.gtk -i NONE ~/todo"
 alias v="vim.gtk -i NONE"
+alias vi="vim.gtk -i NONE"
+alias vim="vim.gtk -i NONE"
 alias vv="source .venv/bin/activate"
 alias mvv="python3 -m venv .venv && source .venv/bin/activate"
 
@@ -43,6 +46,7 @@ alias gpo="git push origin"
 alias gp="git push"
 alias gcm="git commit -m"
 alias ga="git add"
+alias gau="git add -u"
 alias gd="git diff"
 alias gdd="git diff --cached"
 alias gs="git status"
@@ -61,11 +65,14 @@ alias sl="ls"
 alias r="./run"
 alias c="clear"
 alias p="cat"
+alias cdd="cd .."
 alias ..="cd .."
 alias plant="netstat -plant"
 function mk() { mkdir $@ && cd $@; }
 alias k9="kill -9"
 alias g="_grep_wrapper"
+alias rm="rm -i"
+alias cp="cp -i"
 
 function _grep_wrapper() {
 	grep $@ --color=always --exclude-dir={\*.venv\*,\*node_modules\*,\*\.git\*,\*.\*py\*} | grep -v --color=always "Binary file";
@@ -84,6 +91,7 @@ alias vimonous="python3 /home/noot/Git/vimonous/main.py"
 alias tss="tsc --build tsconfig.json"
 alias tsw="tsc --build tsconfig.json -w"
 alias ccmake="cmake --build ."
+alias skull="~/Git/skull/build/src/skull"
 
 alias chrome="chromium-browser"
 
@@ -97,3 +105,5 @@ function getbashrc() {
 function getvimrc() {
 	curl https://raw.githubusercontent.com/dosisod/vimrc/master/vimrc > ~/.vimrc
 }
+
+[ -f ~/.config/fzf.bash ] && source ~/.config/fzf.bash
